@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog id="loginDialog" title="Login">
+    <VBox class="sapUiSmallMargin">
+      <Input placeholder="Username" value="{loginModel>/username}" />
+      <Input placeholder="Password" type="Password" value="{loginModel>/password}" />
+    </VBox>
+    <beginButton>
+      <Button text="Login" press="onLoginSubmit" />
+    </beginButton>
+    <endButton>
+      <Button text="Cancel" press="onLoginClose" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

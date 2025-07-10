@@ -1,0 +1,56 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <Dialog
+    id="editItemDialog"
+    title="Edit Item"
+    draggable="true"
+    resizable="true"
+    contentWidth="30rem"
+    contentHeight="auto"
+    class="sapUiContentPadding">
+
+   <VBox id="_IDGenVBox4">
+
+  <HBox>
+    <Label id="_IDGenLabel4" text="Name" />
+    <Text text="*" class="mandatoryAsterisk" />
+  </HBox>
+  <Input id="_IDGenInput4" value="{editItemModel>/name}" />
+
+  <HBox>
+    <Label id="_IDGenLabel5" text="Description" />
+    <Text text="*" class="mandatoryAsterisk" />
+  </HBox>
+  <Input id="_IDGenInput5" value="{editItemModel>/description}" />
+
+  <HBox>
+    <Label id="_IDGenLabel6" text="Current Stock" />
+    <Text text="*" class="mandatoryAsterisk" />
+  </HBox>
+  <Input id="_IDGenInput6" value="{editItemModel>/currentStock}" type="Number" />
+
+  <HBox>
+    <Label id="_IDGenLabel7" text="Category" />
+    <Text text="*" class="mandatoryAsterisk" />
+  </HBox>
+  <Input id="_IDGenInput7" value="{editItemModel>/category}" />
+
+</VBox>
+
+
+    <beginButton>
+      <Button id="_IDGenButton7"
+        text="Update"
+        type="Emphasized"
+        press=".onUpdateItem" />
+    </beginButton>
+
+    <endButton>
+      <Button id="_IDGenButton8"
+        text="Cancel"
+        press=".onCloseEditDialog" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

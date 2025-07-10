@@ -1,0 +1,51 @@
+<mvc:View
+  controllerName="inventorymgs.controller.ViewInventory"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+
+  <Page
+    id="employeeInventoryPage"
+    title="Employee | View Live Inventory"
+    showHeader="true"
+    class="sapUiContentPadding">
+
+    <content>
+      <!-- Search Bar aligned right -->
+      <HBox justifyContent="End" class="sapUiMediumMarginBottom">
+        <SearchField
+          placeholder="Search by Item Name"
+          liveChange=".onSearch"
+          width="90%" />
+      </HBox>
+      <VBox alignItems="Center">
+        <Title id="_IDGenTitle2" text="View Live Inventory" level="H2" class="customTitleLarge2" />
+      </VBox>
+      <!-- Centered table inside VBox -->
+      <VBox class="sapUiSmallMargin">
+        <Table
+          id="inventoryTable"
+          items="{/Items}">
+
+          <columns>
+            <Column><Text text="Item Name" /></Column>
+            <Column><Text text="Description" /></Column>
+            <Column><Text text="Category" /></Column>
+            <Column><Text text="Stock" /></Column>
+          </columns>
+
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{name}" />
+                <Text text="{description}" />
+                <Text text="{category}" />
+                <Text text="{currentStock}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

@@ -1,0 +1,98 @@
+<mvc:View
+  controllerName="inventorymgs.controller.EmployeeDashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page
+    id="employeeDashboard"
+    title="Employee | Dashboard"
+    showHeader="true"
+    class="sapUiContentPadding">
+
+    <content>
+      <VBox id="employeeVBox"
+        alignItems="Center"
+        justifyContent="Center"
+        class="sapUiLargeMarginTop"
+        width="100%">
+
+        <!-- Title -->
+        <Title
+          id="employeeTitle"
+          text="Welcome to Employee Portal"
+          level="H1"
+          class="customTitleLarge" />
+
+        <!-- Tiles -->
+        <HBox id="employeeTileRow"
+          justifyContent="Center"
+          wrap="Wrap"
+          class="sapUiMediumMarginTop">
+
+          <!-- Tile 1: Create PR -->
+          <GenericTile
+            id="tileCreatePR"
+            header="Create PR"
+            subheader="Raise a Purchase Requisition"
+            press=".onCreatePRPress"
+            frameType="OneByOne"
+            class="sapUiTinyMargin"
+            size="L">
+            <TileContent>
+              <VBox alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon
+                  id="iconCreatePR"
+                  src="sap-icon://add-document"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+          <!-- Tile 2: My Requisitions -->
+          <GenericTile
+            id="tileMyRequests"
+            header="My Requests"
+            subheader="Track submitted PRs"
+            press=".onViewMyPRsPress"
+            frameType="OneByOne"
+            class="sapUiTinyMargin"
+            size="L">
+            <TileContent>
+              <VBox alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon
+                  id="iconMyRequests"
+                  src="sap-icon://my-view"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+          <!-- Tile 3: View Inventory -->
+          <GenericTile
+            id="tileInventory"
+            header="View Inventory"
+            subheader="Check available stock"
+            press=".onViewInventoryPress"
+            frameType="OneByOne"
+            class="sapUiTinyMargin"
+            size="L">
+            <TileContent>
+              <VBox alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon
+                  id="iconInventory"
+                  src="sap-icon://inventory"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

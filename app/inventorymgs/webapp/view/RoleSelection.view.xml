@@ -1,0 +1,65 @@
+<mvc:View
+  controllerName="inventorymgs.controller.RoleSelection"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page title="Inventory Management System">
+    <content>
+      <VBox
+        alignItems="Center"
+        justifyContent="Center"
+        class="sapUiSmallMargin sapUiMediumMarginTop sapUiResponsiveMargin">
+
+        <Text text="Welcome to Inventory Management System" class="customTitleLarge" />
+
+        <!-- Tile Row -->
+        <HBox
+          alignItems="Center"
+          justifyContent="Center"
+          class="sapUiMediumMarginTop">
+
+          <!-- Login Tile -->
+          <GenericTile
+            id="tileLogin"
+            header="Login"
+            subheader="Access your account"
+            press=".onOpenLogin"
+            frameType="OneByOne"
+            class="sapUiTinyMargin"
+            size="L">
+            <TileContent>
+              <VBox alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon
+                  src="sap-icon://log"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+          <!-- Signup Tile -->
+          <GenericTile
+            id="tileSignup"
+            header="Signup"
+            subheader="Create an account"
+            press=".onOpenSignup"
+            frameType="OneByOne"
+            class="sapUiTinyMargin"
+            size="L">
+            <TileContent>
+              <VBox alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon
+                  src="sap-icon://add"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

@@ -1,0 +1,57 @@
+<mvc:View
+  controllerName="inventorymgs.controller.ViewRequests"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  displayBlock="true">
+
+  <Page id="viewRequestsPage" title="Manager | View Requests" showHeader="true">
+    <content>
+    <HBox justifyContent="End" class="sapUiMediumMarginBottom">
+        <SearchField
+          placeholder="Search by Item Name"
+          liveChange=".onSearch"
+          width="90%" />
+        </HBox>
+      <VBox id="_IDGenVBox2" class="sapUiSmallMargin sapUiContentPadding">
+
+      <VBox alignItems="Center">
+        <Title id="_IDGenTitle2" text="Pending Purchase Requisitions" level="H1" class="customTitleLarge2" />
+      </VBox>
+
+        <Table id="requestsTable" items="{requests>/requests}">
+          <columns>
+            <Column id="_IDGenColumn5"><Text id="_IDGenText" text="Item" /></Column>
+            <Column id="_IDGenColumn6"><Text id="_IDGenText11" text="Quantity" /></Column>
+            <Column id="_IDGenColumn7"><Text id="_IDGenText12" text="Purpose" /></Column>
+            <Column id="_IDGenColumn8"><Text id="_IDGenText13" text="Requested By" /></Column>
+            <Column id="_IDGenColumn9"><Text id="_IDGenText14" text="Date" /></Column>
+            <Column id="_IDGenColumn10"><Text id="_IDGenText15" text="Status" /></Column>
+            
+            <Column id="_IDGenColumn11"><Text text="Action" textAlign="Center" />
+</Column>
+
+          </columns>
+
+          <items>
+            <ColumnListItem id="_IDGenColumnListItem1">
+              <cells>
+                <Text id="_IDGenText17" text="{= ${requests>item_ID} ? ${requests>item_ID/name} : '—' }" />
+                <Text id="_IDGenText18" text="{requests>quantity}" />
+                <Text id="_IDGenText19" text="{requests>purpose}" />
+                <Text id="_IDGenText20" text="{requests>requestedBy}" />
+                <Text id="_IDGenText21" text="{= ${requests>requestDate} ? ${requests>requestDate}.substring(0, 10) : '' }" />
+                <Text id="_IDGenText22" text="{requests>status}" />
+                <HBox justifyContent="Start" alignItems="Start">
+                    <core:Icon src="sap-icon://accept" press=".onApprovePress" color="green" size="1.5rem"  class="sapUiTinyMarginBegin" />
+                    <core:Icon src="sap-icon://decline" press=".onRejectPress" color="red" size="1.5rem" class="myCustomSpacing" />
+                </HBox>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

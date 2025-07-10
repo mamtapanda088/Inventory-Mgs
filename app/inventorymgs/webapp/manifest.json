@@ -1,0 +1,187 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "inventorymgs",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.2",
+      "toolsId": "bfd8d7fb-68cc-4c13-a37e-2914454ea491"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/inventory/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "inventorymgs.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        },
+        "type": "sap.ui.model.odata.v4.ODataModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "inventorymgs.view",
+        "viewPath": "inventorymgs.view",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "RouteRoleSelection",
+          "pattern": "",
+          "target": ["TargetRoleSelection"]
+        },
+        {
+          "name": "RouteHome",
+          "pattern": "Home",
+          "target": ["TargetHome"]
+        },
+        {
+          "name": "RouteInventory",
+          "pattern": "Inventory",
+          "target": ["TargetInventory"]
+        },
+        {
+          "name": "RouteViewRequests",
+          "pattern": "ViewRequests",
+          "target": ["TargetViewRequests"]
+        },
+        {
+          "name": "RouteEmployeeDashboard",
+          "pattern": "employee-dashboard",
+          "target": ["TargetEmployeeDashboard"]
+        },
+        {
+          "name": "RouteViewInventory",
+          "pattern": "ViewInventory",
+          "target": ["TargetViewInventory"]
+        },
+        {
+          "name": "RouteCreatePR",
+          "pattern": "create-pr",
+          "target": ["TargetCreatePR"]
+        },
+        {
+          "name": "RouteMyRequisitions",
+          "pattern": "my-requisitions",
+          "target": ["TargetMyRequisitions"]
+        }
+      ],
+      "targets": {
+        "TargetRoleSelection": {
+          "viewName": "RoleSelection",
+          "viewType": "XML",
+          "name": "RoleSelection"
+        },
+        "TargetHome": {
+          "viewName": "Home",
+          "viewType": "XML",
+          "name": "Home"
+        },
+        "TargetInventory": {
+          "viewName": "Inventory",
+          "viewType": "XML",
+          "name": "Inventory"
+        },
+        "TargetViewRequests": {
+          "viewName": "ViewRequests",
+          "viewType": "XML",
+          "name": "ViewRequests"
+        },
+        "TargetEmployeeDashboard": {
+          "viewName": "EmployeeDashboard",
+          "viewType": "XML",
+          "name": "EmployeeDashboard"
+        },
+        "TargetViewInventory": {
+          "viewName": "ViewInventory",
+          "viewType": "XML",
+          "name": "ViewInventory"
+        },
+        "TargetCreatePR": {
+          "viewName": "CreatePR",
+          "viewType": "XML",
+          "name": "CreatePR"
+        },
+        "TargetMyRequisitions": {
+          "viewName": "MyRequisitions",
+          "viewType": "XML",
+          "name": "MyRequisitions"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "inventorymgs.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

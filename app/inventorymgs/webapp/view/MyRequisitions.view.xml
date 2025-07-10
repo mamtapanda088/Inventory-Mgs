@@ -1,0 +1,64 @@
+<mvc:View
+  controllerName="inventorymgs.controller.MyRequisitions"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+ 
+  <Page id="MyRequisitionsPage" title="Employee | My Purchase Requisitions">
+    <content>
+       <HBox justifyContent="End" class="sapUiMediumMarginBottom">
+        <SearchField
+          placeholder="Search by Item Name"
+          liveChange=".onSearch"
+          width="90%" />
+        </HBox>
+        <VBox id="_IDGenVBox2" class="sapUiSmallMargin sapUiContentPadding">
+        <VBox alignItems="Center">
+        <Title id="_IDGenTitle2" text="My Purchase Requisitions" level="H2" class="customTitleLarge2" />
+        </VBox>
+      
+
+        <VBox class="sapUiSmallMargin">
+        <Table
+          id="requisitionTable"
+          items="{/Requisitions}">
+          <columns>
+            <Column>
+              <Text text="Item Name" />
+            </Column>
+            <Column>
+              <Text text="Quantity" />
+            </Column>
+            <Column>
+              <Text text="Purpose" />
+            </Column>
+            <Column>
+              <Text text="Requested By" />
+            </Column>
+            <Column>
+              <Text text="Request Date" />
+            </Column>
+            <Column>
+              <Text text="Status" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{item_ID/name}" />
+                <Text text="{quantity}" />
+                <Text text="{purpose}" />
+                <Text text="{requestedBy}" />
+                <Text text="{requestDate}" />
+                <Text text="{status}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>
+ 
+ 

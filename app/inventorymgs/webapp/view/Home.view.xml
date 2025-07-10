@@ -1,0 +1,65 @@
+<mvc:View
+  controllerName="inventorymgs.controller.Home"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page
+    id="managerHome"
+    title="Manager | Home"
+    class="sapUiContentPadding"
+    showHeader="true">
+
+    <content>
+      <VBox id="_IDGenVBox5"
+        alignItems="Center"
+        justifyContent="Center"
+        width="100%"
+        class="sapUiLargeMarginTop">
+
+        <!-- Page Title -->
+        <Title id="_IDGenTitle" text="Welcome to Manager Portal" level="H1" class="customTitleLarge" />
+
+        <!-- Tiles Row -->
+        <HBox id="_IDGenHBox" justifyContent="Center" wrap="Wrap" class="sapUiMediumMarginTop">
+
+          <!-- Tile 1: Manage Inventory -->
+          <GenericTile id="_IDGenGenericTile"
+            header="Manage Inventory"
+            subheader="View/Add/Edit Items"
+            press=".onNavigateToInventory"
+            frameType="OneByOne"
+            class="sapUiTinyMargin">
+            <TileContent id="_IDGenTileContent">
+              <VBox id="_IDGenVBox6" alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon id="_IDGenIcon"
+                  src="sap-icon://inventory"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+          <!-- Tile 2: View Requests -->
+          <GenericTile id="_IDGenGenericTile1"
+            header="View Requests"
+            subheader="Approve/Reject PRs"
+            press=".onNavigateToRequests"
+            frameType="OneByOne"
+            class="sapUiTinyMargin">
+            <TileContent id="_IDGenTileContent1">
+              <VBox id="_IDGenVBox7" alignItems="Center" justifyContent="Center" height="100%">
+                <core:Icon id="_IDGenIcon1"
+                  src="sap-icon://task"
+                  size="2.4rem"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </TileContent>
+          </GenericTile>
+
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

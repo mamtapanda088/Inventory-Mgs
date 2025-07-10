@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <Dialog
+    id="addItemDialog"
+    title="Add New Item"
+    draggable="true"
+    resizable="true"
+    contentWidth="30rem"
+    contentHeight="auto"
+    class="sapUiContentPadding">
+
+    <VBox id="_IDGenVBox3">
+      <HBox>
+      <Label id="_IDGenLabel" text="Name" />
+      <Text text="*" class="mandatoryAsterisk" />
+      </HBox>
+      <Input id="_IDGenInput" value="{addItemModel>/name}" />
+
+      <HBox>
+      <Label id="_IDGenLabel1" text="Description" />
+      <Text text="*" class="mandatoryAsterisk" />
+      </HBox>
+      <Input id="_IDGenInput1" value="{addItemModel>/description}" />
+
+      <HBox>
+      <Label id="_IDGenLabel2" text="Current Stock" />
+      <Text text="*" class="mandatoryAsterisk" />
+      </HBox>
+      <Input id="_IDGenInput2" value="{addItemModel>/currentStock}" type="Number" />
+
+      <HBox>
+      <Label id="_IDGenLabel3" text="Category" />
+      <Text text="*" class="mandatoryAsterisk" />
+      </HBox>
+      <Input id="_IDGenInput3" value="{addItemModel>/category}" />
+    </VBox>
+
+    <beginButton>
+      <Button id="_IDGenButton5"
+        text="Add"
+        type="Emphasized"
+        press=".onAddItem" />
+    </beginButton>
+
+    <endButton>
+      <Button id="_IDGenButton6"
+        text="Cancel"
+        press=".onCloseAddDialog" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>
