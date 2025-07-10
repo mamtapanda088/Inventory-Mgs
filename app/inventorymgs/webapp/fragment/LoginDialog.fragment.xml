@@ -1,14 +1,49 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-  <Dialog id="loginDialog" title="Login">
-    <VBox class="sapUiSmallMargin">
-      <Input placeholder="Username" value="{loginModel>/username}" />
-      <Input placeholder="Password" type="Password" value="{loginModel>/password}" />
+  <Dialog
+    id="loginDialog"
+    title="Login"
+    class="sapUiContentPadding"
+    contentWidth="400px"
+    stretchOnPhone="true">
+
+    <VBox class="sapUiSmallMarginTop">
+
+      <!-- Email Field -->
+      <Label text="Email" labelFor="loginEmailInput" required="true" />
+      <Input
+        id="loginEmailInput"
+        value="{loginModel>/email}"
+        placeholder="Enter your email"
+        width="100%" />
+
+      <!-- Password Field -->
+      <Label text="Password" labelFor="loginPasswordInput" class="sapUiSmallMarginTop" required="true" />
+      <HBox alignItems="Center" justifyContent="Start">
+        <HBox alignItems="Center">
+        <Input
+          id="loginPasswordInput"
+          value="{loginModel>/password}"
+          type="{= ${loginModel>/showPassword} ? 'Text' : 'Password' }"
+          width="100%"
+          placeholder="Enter your password" />
+        <Button
+          icon="{= ${loginModel>/showPassword} ? 'sap-icon://hide' : 'sap-icon://show' }"
+          press=".onToggleLoginPasswordVisibility"
+          type="Transparent"
+          tooltip="Toggle password visibility" />
+      </HBox>
+
+      </HBox>
+
     </VBox>
+
+    <!-- Dialog Action Buttons -->
     <beginButton>
-      <Button text="Login" press="onLoginSubmit" />
+      <Button text="Login" type="Emphasized" press=".onLoginSubmit" />
     </beginButton>
     <endButton>
-      <Button text="Cancel" press="onLoginClose" />
+      <Button text="Cancel" press=".onLoginClose" />
     </endButton>
+
   </Dialog>
 </core:FragmentDefinition>

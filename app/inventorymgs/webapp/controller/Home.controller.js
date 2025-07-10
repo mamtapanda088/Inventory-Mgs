@@ -11,8 +11,15 @@ sap.ui.define([
   
       onNavigateToRequests: function () {
         this.getOwnerComponent().getRouter().navTo("RouteViewRequests");
+      },
+
+      onLogoutPress: function () {
+        // Optional: clear any session or model data
+        sap.m.MessageToast.show("Logged out successfully");
+      
+        // Navigate to login/role selection screen
+        this.getOwnerComponent().getRouter().navTo("RouteRoleSelection");
       }
-  
     });
   });
   

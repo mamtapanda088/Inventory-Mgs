@@ -1,10 +1,51 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-  <Dialog id="signupDialog" title="Signup">
-    <VBox class="sapUiSmallMargin">
-      <Input placeholder="Username" value="{signupModel>/username}" />
-      <Input placeholder="Email" value="{signupModel>/email}" />
-      <Input placeholder="Password" type="Password" value="{signupModel>/password}" />
-      <Select selectedKey="{signupModel>/role}">
+  <Dialog
+    id="signupDialog"
+    title="Signup"
+    class="sapUiContentPadding"
+    contentWidth="400px"
+    stretchOnPhone="true">
+
+    <VBox class="sapUiSmallMarginTop">
+
+      <!-- Username -->
+      <Label text="Username" labelFor="usernameInput" required="true" />
+      <Input
+        id="usernameInput"
+        value="{signupModel>/username}"
+        placeholder="Enter your username"
+        width="100%" />
+
+      <!-- Email -->
+      <Label text="Email" labelFor="emailInput" class="sapUiSmallMarginTop" required="true" />
+      <Input
+        id="emailInput"
+        value="{signupModel>/email}"
+        placeholder="Enter your email"
+        width="100%" />
+
+      <!-- Password with toggle -->
+      <Label text="Password" labelFor="signupPasswordInput" class="sapUiSmallMarginTop" required="true" />
+      <HBox alignItems="Center" justifyContent="Start">
+        <Input
+          id="signupPasswordInput"
+          value="{signupModel>/password}"
+          type="{= ${signupModel>/showPassword} ? 'Text' : 'Password' }"
+          width="100%"
+          placeholder="Enter your password" />
+        <Button
+          icon="{= ${signupModel>/showPassword} ? 'sap-icon://hide' : 'sap-icon://show' }"
+          press=".onTogglePasswordVisibility"
+          type="Transparent"
+          tooltip="Toggle password visibility" />
+      </HBox>
+
+      <!-- Role -->
+      <Label text="Role" labelFor="roleSelect" class="sapUiSmallMarginTop" required="true" />
+      <Select
+        id="roleSelect"
+        selectedKey="{signupModel>/role}"
+        width="100%">
         <items>
           <core:Item key="Select" text="Select" />
           <core:Item key="Manager" text="Manager" />
@@ -12,11 +53,13 @@
         </items>
       </Select>
     </VBox>
+
     <beginButton>
-      <Button text="Signup" press="onSignupSubmit" />
+      <Button text="Signup" type="Emphasized" press=".onSignupSubmit" />
     </beginButton>
     <endButton>
-      <Button text="Cancel" press="onSignupClose" />
+      <Button text="Cancel" press=".onSignupClose" />
     </endButton>
+
   </Dialog>
 </core:FragmentDefinition>

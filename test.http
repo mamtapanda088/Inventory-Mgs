@@ -40,11 +40,48 @@ POST http://localhost:4004/odata/v4/inventory/submitRequisitions
 Content-Type: application/json
 Accept: application/json
 
-{
-  "itemID": "11111111-1111-1111-1111-111111111111",
-  "quantity": 2,
-  "purpose": "For deployment test"
-}
+[
+  {
+    "item": "Notebook",
+    "quantity": 50,
+    "description": "Monthly stationery supply for training sessions"
+  },
+  {
+    "item": "Printer",
+    "quantity": 1,
+    "description": "New printer for Finance department"
+  },
+  {
+    "item": "Whiteboard Marker",
+    "quantity": 100,
+    "description": "Bulk order for all meeting rooms"
+  },
+  {
+    "item": "Desk Lamp",
+    "quantity": 5,
+    "description": "Additional lighting for design team"
+  },
+  {
+    "item": "External Hard Drive",
+    "quantity": 2,
+    "description": "Backup storage for project archives"
+  },
+  {
+    "item": "Sticky Notes",
+    "quantity": 300,
+    "description": "For workshop and brainstorming sessions"
+  },
+  {
+    "item": "Filing Cabinet",
+    "quantity": 4,
+    "description": "Document storage for admin office"
+  },
+  {
+    "item": "Router",
+    "quantity": 2,
+    "description": "New Wi-Fi setup in conference rooms"
+  }
+]
 
 
 

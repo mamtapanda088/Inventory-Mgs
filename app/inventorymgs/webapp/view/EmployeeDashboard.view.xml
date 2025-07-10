@@ -11,6 +11,20 @@
     showHeader="true"
     class="sapUiContentPadding">
 
+ <customHeader>
+      <Bar
+        design="Header">
+        <contentRight>
+          <Button
+            icon="sap-icon://log"
+            text="Logout"
+            type="Reject"
+            press=".onLogoutPress"
+          />
+        </contentRight>
+      </Bar>
+    </customHeader>
+
     <content>
       <VBox id="employeeVBox"
         alignItems="Center"

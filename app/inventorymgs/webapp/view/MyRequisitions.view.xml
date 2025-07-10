@@ -1,3 +1,4 @@
+
 <mvc:View
   controllerName="inventorymgs.controller.MyRequisitions"
   xmlns:mvc="sap.ui.core.mvc"
@@ -33,9 +34,6 @@
               <Text text="Purpose" />
             </Column>
             <Column>
-              <Text text="Requested By" />
-            </Column>
-            <Column>
               <Text text="Request Date" />
             </Column>
             <Column>
@@ -48,7 +46,6 @@
                 <Text text="{item_ID/name}" />
                 <Text text="{quantity}" />
                 <Text text="{purpose}" />
-                <Text text="{requestedBy}" />
                 <Text text="{requestDate}" />
                 <Text text="{status}" />
               </cells>
